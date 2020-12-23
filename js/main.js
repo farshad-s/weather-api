@@ -8,6 +8,8 @@ let cardTitle = document.getElementById("card-title");
 let weatherType = document.getElementById("card-text-type");
 let weatherDesc = document.getElementById("card-text-temp");
 
+let cardRoot = document.getElementById("card-root");
+
 dropdown.addEventListener("click", function () {
   dropdownBox.style.display !== "none"
     ? (dropdownBox.style.display = "none")
@@ -21,9 +23,17 @@ fetch(endpoint)
       currentWeather = data.weather[0].main,
       weatherDescription = data.weather[0].description;
 
-    cardTitle.innerText = data.name;
-    weatherType.innerText = "Weather: " + currentWeather;
-    weatherDesc.innerText = "Description: " + weatherDescription;
+    cardRoot.innerHTML = `<div class="card-image">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Unusually_well_defined_warm_front.jpg/200px-Unusually_well_defined_warm_front.jpg"
+      />
+      <span class="card-title" id="card-title">Card Title</span>
+    </div>
+    <div class="card-content">
+      <p id="card-text-type"></p>
+      <p id="card-text-temp"></p>
+    </div>`;
+    console.log(cardRoot);
   })
   .catch((error) => {
     console.log("error is", error);
