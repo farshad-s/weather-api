@@ -16,7 +16,15 @@ dropdown.addEventListener("click", function () {
 
 fetch(endpoint)
   .then((response) => response.json())
-  .then((data) => {})
+  .then((data) => {
+    const name = data.name,
+      currentWeather = data.weather[0].main,
+      weatherDescription = data.weather[0].description;
+
+    cardTitle.innerText = data.name;
+    weatherType.innerText = "Weather: " + currentWeather;
+    weatherDesc.innerText = "Description: " + weatherDescription;
+  })
   .catch((error) => {
     console.log("error is", error);
   });
