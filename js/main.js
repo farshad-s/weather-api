@@ -27,11 +27,11 @@ fetch(endpoint)
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Unusually_well_defined_warm_front.jpg/200px-Unusually_well_defined_warm_front.jpg"
       />
-      <span class="card-title" id="card-title">Card Title</span>
+      <span class="card-title" id="card-title">${name}</span>
     </div>
     <div class="card-content">
-      <p id="card-text-type"></p>
-      <p id="card-text-temp"></p>
+      <p id="card-text-type">Weather: ${currentWeather}</p>
+      <p id="card-text-temp">Description: ${weatherDescription}</p>
     </div>`;
     console.log(cardRoot);
   })
