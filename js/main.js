@@ -4,6 +4,10 @@ let endpoint =
 let dropdown = document.getElementById("dropdown");
 let dropdownBox = document.getElementById("dropdown-box");
 
+let cardTitle = document.getElementById("card-title");
+let weatherType = document.getElementById("card-text-type");
+let weatherDesc = document.getElementById("card-text-temp");
+
 dropdown.addEventListener("click", function () {
   dropdownBox.style.display !== "none"
     ? (dropdownBox.style.display = "none")
