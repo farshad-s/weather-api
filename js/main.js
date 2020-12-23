@@ -17,7 +17,9 @@ fetch(endpoint)
   .then((data) => {
     const name = data.name,
       currentWeather = data.weather[0].main,
-      weatherDescription = data.weather[0].description;
+      weatherDescription = data.weather[0].description,
+      minTemp = data.main.temp_min,
+      maxTemp = data.main.temp_max;
 
     cardRoot.innerHTML = `<div class="card-image">
       <img
@@ -32,21 +34,21 @@ fetch(endpoint)
 
     dropdownRoot.innerHTML = `<ul>
     <li class="dropdown-header">
-      Weather <span class="dropdown-info">Text</span>
+      Location <span class="dropdown-info">${name}</span>
     </li>
     <li class="dropdown-header">
-      Description <span class="dropdown-info">Text</span>
+      Weather <span class="dropdown-info">${currentWeather}</span>
+    </li>
+    <li class="dropdown-header">
+      Description <span class="dropdown-info">${weatherDescription}</span>
     </li>
     <li class="dropdown-header">
       Minimum Temperature
-      <span class="dropdown-info">Text</span>
+      <span class="dropdown-info">${minTemp}</span>
     </li>
     <li class="dropdown-header">
       Maximum Temperature
-      <span class="dropdown-info">Text</span>
-    </li>
-    <li class="dropdown-header">
-      Location <span class="dropdown-info">Text</span>
+      <span class="dropdown-info">${maxTemp}</span>
     </li>
   </ul>`;
   })
