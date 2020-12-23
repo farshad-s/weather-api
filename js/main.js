@@ -4,6 +4,7 @@ let endpoint =
 let dropdown = document.getElementById("dropdown");
 let dropdownBox = document.getElementById("dropdown-box");
 let cardRoot = document.getElementById("card-root");
+let dropdownRoot = document.getElementById("dropdown-root");
 
 dropdown.addEventListener("click", function () {
   dropdownBox.style.display !== "none"
@@ -28,7 +29,26 @@ fetch(endpoint)
       <p id="card-text-type">Weather: ${currentWeather}</p>
       <p id="card-text-temp">Description: ${weatherDescription}</p>
     </div>`;
-    console.log(cardRoot);
+
+    dropdownRoot.innerHTML = `<ul>
+    <li class="dropdown-header">
+      Weather <span class="dropdown-info">Text</span>
+    </li>
+    <li class="dropdown-header">
+      Description <span class="dropdown-info">Text</span>
+    </li>
+    <li class="dropdown-header">
+      Minimum Temperature
+      <span class="dropdown-info">Text</span>
+    </li>
+    <li class="dropdown-header">
+      Maximum Temperature
+      <span class="dropdown-info">Text</span>
+    </li>
+    <li class="dropdown-header">
+      Location <span class="dropdown-info">Text</span>
+    </li>
+  </ul>`;
   })
   .catch((error) => {
     console.log("error is", error);
