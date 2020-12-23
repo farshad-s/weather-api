@@ -5,3 +5,8 @@
 img {
   height: 250px;
 }
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+}
