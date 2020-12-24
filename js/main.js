@@ -55,3 +55,33 @@ fetch(endpoint)
   .catch((error) => {
     console.log("error is", error);
   });
+
+const instructionsToUse = () => {
+  let instructions = document.getElementById("instructions");
+  if (
+    endpoint ==
+    "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID={API_KEY}"
+  ) {
+    dropdownRoot.innerHTML = `
+    <div class="instructions center-align" id="instructions">
+    <h1>Instructions:</h1>
+    <ol>
+      <li>Go to: https://openweathermap.org/price</li>
+      <li>Click on Get API Key under the heading Free</li>
+      <li>Sign up - you should receieve an Email within 15 minutes</li>
+      <li>Go to: https://github.com/farshad-s/weather-api</li>
+      <li>Click on Code</li>
+      <li>Download/Clone the repository</li>
+      <li>Go into js folder, main.js file</li>
+      <li>Replace {API_KEY} with your API Key</li>
+      <li>Run the website (e.g. with live server)</li>
+      <li>Get live weather updates!</li>
+    </ol>
+    </div>`;
+    instructions.style.display = "block";
+  } else {
+    instructions.style.display = "none";
+  }
+};
+
+instructionsToUse();
