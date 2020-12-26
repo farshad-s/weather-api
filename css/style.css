@@ -6,6 +6,10 @@ img {
   height: 250px;
 }
 
+.city-search {
+  width: 50% !important;
+}
+
 .dropdown-header {
   display: flex;
   justify-content: space-between;
