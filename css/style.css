@@ -10,3 +10,7 @@ img {
   display: flex;
   justify-content: space-between;
 }
+
+.dropdown-box {
+  display: none;
+}
