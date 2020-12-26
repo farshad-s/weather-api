@@ -1,27 +1,24 @@
-let endpoint =
-  "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID={API_KEY}";
-
+let cityName = "";
 let dropdown = document.getElementById("dropdown");
 let dropdownBox = document.getElementById("dropdown-box");
 let dropdownRoot = document.getElementById("dropdown-root");
 let searchbar = document.getElementById("city-search");
+let searchButton = document.getElementById("city-search-button");
 
-dropdown.addEventListener("click", function () {
-  dropdownBox.style.display !== "block"
-    ? (dropdownBox.style.display = "block")
-    : (dropdownBox.style.display = "none");
-});
+searchButton.addEventListener("click", function () {
+  cityName = searchbar.value;
+  let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID={API_KEY}`;
 
-fetch(endpoint)
-  .then((response) => response.json())
-  .then((data) => {
-    const name = data.name,
-      currentWeather = data.weather[0].main,
-      weatherDescription = data.weather[0].description,
-      minTemp = data.main.temp_min,
-      maxTemp = data.main.temp_max;
+  fetch(endpoint)
+    .then((response) => response.json())
+    .then((data) => {
+      const name = data.name,
+        currentWeather = data.weather[0].main,
+        weatherDescription = data.weather[0].description,
+        minTemp = data.main.temp_min,
+        maxTemp = data.main.temp_max;
 
-    dropdownRoot.innerHTML = `<ul>
+      dropdownRoot.innerHTML = `<ul>
     <li class="dropdown-header">
       Location <span class="dropdown-info">${name}</span>
     </li>
@@ -40,18 +37,18 @@ fetch(endpoint)
       <span class="dropdown-info">${Math.round(maxTemp - 273.15)}&#8451</span>
     </li>
   </ul>`;
-  })
-  .catch((error) => {
-    console.log("error is", error);
-  });
+    })
+    .catch((error) => {
+      console.log("error is", error);
+    });
 
-const instructionsToUse = () => {
-  let instructions = document.getElementById("instructions");
-  if (
-    endpoint ==
-    "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID={API_KEY}"
-  ) {
-    dropdownRoot.innerHTML = `
+  const instructionsToUse = () => {
+    let instructions = document.getElementById("instructions");
+    if (
+      endpoint ==
+      "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID={API_KEY}"
+    ) {
+      dropdownRoot.innerHTML = `
     <div class="instructions center-align" id="instructions">
     <h1>Instructions:</h1>
     <ol>
@@ -67,10 +64,17 @@ const instructionsToUse = () => {
       <li>Get live weather updates!</li>
     </ol>
     </div>`;
-    instructions.style.display = "block";
-  } else {
-    instructions.style.display = "none";
-  }
-};
+      instructions.style.display = "block";
+    } else {
+      instructions.style.display = "none";
+    }
+  };
+});
 
-instructionsToUse();
+dropdown.addEventListener("click", function () {
+  dropdownBox.style.display !== "block"
+    ? (dropdownBox.style.display = "block")
+    : (dropdownBox.style.display = "none");
+});
+
+// instructionsToUse();
