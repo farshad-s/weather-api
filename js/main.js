@@ -1,9 +1,9 @@
-let cityName = "";
 let dropdown = document.getElementById("dropdown");
 let dropdownBox = document.getElementById("dropdown-box");
 let dropdownRoot = document.getElementById("dropdown-root");
 let searchbar = document.getElementById("city-search");
 let searchButton = document.getElementById("city-search-button");
+let cityName = "";
 
 searchButton.addEventListener("click", function () {
   cityName = searchbar.value;
