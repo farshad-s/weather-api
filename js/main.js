@@ -7,9 +7,9 @@ let cardRoot = document.getElementById("card-root");
 let dropdownRoot = document.getElementById("dropdown-root");
 
 dropdown.addEventListener("click", function () {
-  dropdownBox.style.display !== "none"
-    ? (dropdownBox.style.display = "none")
-    : (dropdownBox.style.display = "block");
+  dropdownBox.style.display !== "block"
+    ? (dropdownBox.style.display = "block")
+    : (dropdownBox.style.display = "none");
 });
 
 fetch(endpoint)
