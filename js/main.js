@@ -45,12 +45,6 @@ searchButton.addEventListener("click", function () {
     });
 });
 
-dropdown.addEventListener("click", function () {
-  dropdownBox.style.display !== "block"
-    ? (dropdownBox.style.display = "block")
-    : (dropdownBox.style.display = "none");
-});
-
 const instructionsToUse = () => {
   let instructions = document.getElementById("instructions");
   if (
@@ -79,5 +73,11 @@ const instructionsToUse = () => {
     instructions.style.display = "none";
   }
 };
+
+dropdown.addEventListener("click", function () {
+  dropdownBox.style.display !== "block"
+    ? (dropdownBox.style.display = "block")
+    : (dropdownBox.style.display = "none");
+});
 
 instructionsToUse();
