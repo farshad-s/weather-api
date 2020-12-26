@@ -33,11 +33,11 @@ fetch(endpoint)
     </li>
     <li class="dropdown-header">
       Minimum Temperature
-      <span class="dropdown-info">${Math.round(minTemp - 273.15)}</span>
+      <span class="dropdown-info">${Math.round(minTemp - 273.15)}&#8451</span>
     </li>
     <li class="dropdown-header">
       Maximum Temperature
-      <span class="dropdown-info">${Math.round(maxTemp - 273.15)}</span>
+      <span class="dropdown-info">${Math.round(maxTemp - 273.15)}&#8451</span>
     </li>
   </ul>`;
   })
