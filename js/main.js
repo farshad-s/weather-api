@@ -8,6 +8,9 @@ let cityName = "";
 let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID={API_KEY}`;
 
 searchButton.addEventListener("click", function () {
+  dropdownBox.style.display !== "block"
+    ? (dropdownBox.style.display = "block")
+    : (dropdownBox.style.display = "block");
   cityName = searchbar.value;
   endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID={API_KEY}`;
 
