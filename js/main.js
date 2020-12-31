@@ -5,14 +5,14 @@ let searchbar = document.getElementById("city-search");
 let searchButton = document.getElementById("city-search-button");
 let cityName = "";
 
-let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID={API_KEY}`;
+let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=f24bd35c80ae8608ad0888673b2b7239`;
 
 searchButton.addEventListener("click", function () {
   dropdownBox.style.display !== "block"
     ? (dropdownBox.style.display = "block")
     : (dropdownBox.style.display = "block");
   cityName = searchbar.value;
-  endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID={API_KEY}`;
+  endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=f24bd35c80ae8608ad0888673b2b7239`;
 
   fetch(endpoint)
     .then((response) => response.json())
