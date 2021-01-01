@@ -53,3 +53,10 @@ dropdown.addEventListener("click", function () {
     ? (dropdownBox.style.display = "block")
     : (dropdownBox.style.display = "none");
 });
+
+searchbar.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    searchButton.click();
+  }
+});
